@@ -1,0 +1,40 @@
+{
+  "name": "@cgvweb/openpay-client",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "directory": "https://github.com/ChrisGV04/openpay-client",
+    "type": "git"
+  },
+  "author": {
+    "email": "christian@chrisgvdev.com",
+    "name": "Christian Gil Villaseñor",
+    "url": "https://cgvweb.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpx rimraf dist && tsup src/*.ts --format cjs,esm --dts --minify",
+    "lint": "biome lint ./src",
+    "release": "release-it && npm run build && npm publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.0",
+    "@changesets/cli": "^2.27.1",
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@types/node": "^20.11.25",
+    "changelogen": "^0.5.5",
+    "release-it": "^17.1.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  }
+}
